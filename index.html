@@ -26,6 +26,7 @@
     <script src="deviceOrientationExt.js"></script>
 
     <!-- Our scripts -->
+	<!-- 
     <style>
         /* Reset */
         body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
@@ -99,7 +100,8 @@
         div#list div button:active { position:relative; top:1px; }
 
         div#list div button div img { width: 150px; }
-    </style>
+    </style>  -->
+
 
     <script>
         var docs =
@@ -121,23 +123,23 @@
                 }) ;
 				oViewer.loadModel (options.docid) ;
 
-				for ( var i =0 ; i < docs.length ; i++ ) {
-					var r =$('<div><button id="view_' + i + '">'
-						+ docs [i].name
-						+ '<div><img id="img__' + i + '" src="' + docs [i].path + '.png"></div></button></div>') ;
-					$('#list').append (r) ;
-					$('#view_' + i).click (function (e) {
-						e.stopPropagation () ;
-                        //oViewer.impl.unloadCurrentModel () ;
-                        // API would be tearDown()/setUp()
-                        // tearDown() unloads extensions too, so you need setUp() after that to load again
-                        // setUp() requires the viewer configuration again, the one you use to start the viewer.
-                        oViewer.tearDown () ;
-                        oViewer.setUp ({ env: 'Local' }) ;
-						var i =parseInt (e.target.id.substring (5)) ;
-						oViewer.loadModel (docs [i].path) ;
-					}) ;
-				}
+	//			for ( var i =0 ; i < docs.length ; i++ ) {
+		//			var r =$('<div><button id="view_' + i + '">'
+		//				+ docs [i].name
+		//				+ '<div><img id="img__' + i + '" src="' + docs [i].path + '.png"></div></button></div>') ;
+		//			$('#list').append (r) ;
+		//			$('#view_' + i).click (function (e) {
+		//				e.stopPropagation () ;
+                  //      //oViewer.impl.unloadCurrentModel () ;
+                //        // API would be tearDown()/setUp()
+                //        // tearDown() unloads extensions too, so you need setUp() after that to load again
+                //        // setUp() requires the viewer configuration again, the one you use to start the viewer.
+                //        oViewer.tearDown () ;
+               //         oViewer.setUp ({ env: 'Local' }) ;
+		//				var i =parseInt (e.target.id.substring (5)) ;
+		//				oViewer.loadModel (docs [i].path) ;
+		//			}) ;
+		//		}
 			}) ;
         }) ;
     </script>
